@@ -1,0 +1,22 @@
+<div class="container d-flex flex-column align-items-center justify-content-center p-2">
+  <div class="row p-2">
+      <h1>Final Score</h1>
+  </div>
+
+  <div class="row p-2">
+    <% if @included %>
+      <% if @english_word %>
+        <p><strong>Congratulations!</strong> <%= @word %> is a valid word</p>
+      <% else %>
+        <p><strong><%= @word %></strong> is not a valid English word</p>
+      <% end %>
+    <% else %>
+      <p><strong><%= @word %></strong> can't be made out of <%= @letters.join(", ") %></p>
+    <% end %>
+  </div>
+
+
+  <div class="row p-2">
+    <p clss="btn primary-btn"><%= link_to 'Play Again?', root_path %></p>
+  </div>
+</div>
